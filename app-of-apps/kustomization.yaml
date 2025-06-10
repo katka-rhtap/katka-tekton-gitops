@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: katka-tekton 
+  janus-idp.io/tekton: katka-tekton
+  backstage.io/kubernetes-id: katka-tekton
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: katka-tekton
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
